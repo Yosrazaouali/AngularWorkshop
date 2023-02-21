@@ -1,0 +1,65 @@
+<div>
+  <form #f="ngForm">
+    <div class="form-group">
+        <label for="id">Nom</label>
+        <input type="text" class="form-control" name="name" placeholder="Enter your name" ngModel required #test="ngModel">
+      </div>
+      <div *ngIf="test.invalid && (test.dirty || test.touched)" class="alert alert-danger">
+        <div *ngIf="test.errors?.['required']">
+            <p class="text-danger">Name is required</p>
+        </div>
+      </div>
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="email" class="form-control" name="email" placeholder="Enter email" ngModel required #testemail="ngModel">
+    </div>
+    <div *ngIf="testemail.invalid && (testemail.dirty || testemail.touched)" class="alert alert-danger">
+        <div *ngIf="testemail.errors?.['required']">
+            <p class="text-danger">E-mail is required</p>
+        </div>
+        <div *ngIf="testemail.errors?.['pattern']">
+          <p class="text-danger">Email not valid</p>
+      </div>
+      </div>
+
+    <div class="form-group">
+          <div class="form-group">
+            <label for="typecarte">typecarte</label>
+            <input type="text typecarte" class="form-control" name="typecarte" placeholder="Enter card type" ngModel required #testtypecarte="ngModel">
+          </div>
+          <div *ngIf="testtypecarte.invalid && (testtypecarte.dirty || testtypecarte.touched)" class="alert alert-danger">
+              <div *ngIf="testtypecarte.errors?.['required']">
+                  <p class="text-danger">Id is required</p>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label for="numcarte">numcarte</label>
+            <input type="text numcarte" class="form-control" name="numcarte" placeholder="Enter the card number" ngModel minlength="16" required #testnumcarte="ngModel">
+          </div>
+          <div *ngIf="testnumcarte.invalid && (testnumcarte.dirty || testnumcarte.touched)" class="alert alert-danger">
+              <div *ngIf="testnumcarte.errors?.['required']">
+                  <p class="text-danger">Id is required</p>
+              </div>
+              <div *ngIf="testnumcarte.errors?.['minlength']">
+                <p class="text-danger">Minium length is is 16</p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="date">Expiration date</label>
+            <input type="text date" class="form-control" name="date" placeholder="Enter the expiration Date" ngModel required #testdate="ngModel">
+          </div>
+          <div *ngIf="testdate.invalid && (testdate.dirty || testdate.touched)" class="alert alert-danger">
+              <div *ngIf="testdate.errors?.['required']">
+                  <p class="text-danger">Id is required</p>
+              </div>
+          </div>
+          <div class="form-group" [hidden]="f.invalid">
+              <label for="code">Code</label>
+              <input type="text" class="form-control" name="code" placeholder="Enter your Code" >
+          </div>
+        <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Submit</button>
+</div>
+  </form>
+</div>

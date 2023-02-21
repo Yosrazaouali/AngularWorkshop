@@ -10,6 +10,8 @@ import { ArticlesComponent } from './articles/articles.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HomeComponent } from './home/home.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { TemplateDrivenFormComponentComponent } from './template-driven-form-component/template-driven-form-component.component';
+
  
 @NgModule({
   declarations: [
@@ -20,7 +22,10 @@ import { AddProductComponent } from './add-product/add-product.component';
     ArticlesComponent,
     NotfoundComponent,
     HomeComponent,
-    AddProductComponent 
+    AddProductComponent,
+    TemplateDrivenFormComponentComponent,
+    
+   
   ],
   imports: [
     BrowserModule,

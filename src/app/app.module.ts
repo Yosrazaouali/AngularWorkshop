@@ -11,6 +11,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { HomeComponent } from './home/home.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { TemplateDrivenFormYosraComponent } from './template-driven-form-yosra/template-driven-form-yosra.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
  
 @NgModule({
@@ -23,7 +24,8 @@ import { TemplateDrivenFormYosraComponent } from './template-driven-form-yosra/t
     NotfoundComponent,
     HomeComponent,
     AddProductComponent,
-    TemplateDrivenFormYosraComponent
+    TemplateDrivenFormYosraComponent,
+    ProductDetailComponent
     
    
   ],

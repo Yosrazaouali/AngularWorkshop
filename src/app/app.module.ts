@@ -10,7 +10,7 @@ import { ArticlesComponent } from './articles/articles.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HomeComponent } from './home/home.component';
 import { AddProductComponent } from './add-product/add-product.component';
-import { TemplateDrivenFormComponentComponent } from './template-driven-form-component/template-driven-form-component.component';
+import { TemplateDrivenFormYosraComponent } from './template-driven-form-yosra/template-driven-form-yosra.component';
 
  
 @NgModule({
@@ -23,7 +23,7 @@ import { TemplateDrivenFormComponentComponent } from './template-driven-form-com
     NotfoundComponent,
     HomeComponent,
     AddProductComponent,
-    TemplateDrivenFormComponentComponent,
+    TemplateDrivenFormYosraComponent
     
    
   ],

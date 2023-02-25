@@ -1,0 +1,60 @@
+<form #f="ngForm">
+
+    <div class="form-group">
+      <label>Nom</label>
+      <input type="text" class="form-control" name="name" placeholder="Enter your name"  ngModel required #test="ngModel">
+      <div class="alert alert-danger" role="alert" *ngIf="test.invalid && (test.dirty || test.touched)" >
+        Name is required
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label>E-mail</label>
+      <input type="email" class="form-control" name="Email" placeholder="Enter your Email" ngModel required #Email="ngModel" pattern="[a-z0-9._%+-]+.[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}">
+      <div class="alert alert-danger" role="alert" *ngIf="Email.invalid && (Email.dirty || Email.touched)">
+
+        <div *ngIf="Email.errors?.['required']">Email is required</div>
+        <div *ngIf="Email.errors?.['pattern']"> Email must be in the format xxxxx.yyyyy@zzz</div>
+        </div>
+      </div>
+   
+    <div class="form-group">
+        <label for="exampleInputtypecarte"class="form-control">cart Type</label>
+        <input type="typecarte" class="form-control" name="typearte" placeholder="Enter your cart type" ngModel required #cartT="ngModel">
+        <div class="alert alert-danger" role="alert" *ngIf="cartT.invalid && (cartT.dirty || cartT.touched)" >
+           cart type is required
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputnumcarte"class="form-control">cart number</label>
+        <input type="numcarte" class="form-control"  name="numcarte" placeholder="Enter your cart number" ngModel required #cartN="ngModel"  minlength="16"  maxlength="16">
+        <div class="alert alert-danger" role="alert" *ngIf="cartN.invalid && (cartN.dirty || cartN.touched)">cart number is required</div>
+        <div *ngIf="cartN.errors?.['minlength']">
+          <p class="text-danger"> length must be 16</p>
+      </div>
+      <div *ngIf="cartN.errors?.['maxlength']">
+        <p class="text-danger">lenth must be 16</p>
+    </div>
+
+
+
+      </div>
+      <div class="form-group">
+        <label >Expiration date</label>
+        <input type="password" class="form-control"  name="Expirationdate" placeholder="Enter your Expiration date" ngModel required #Date="ngModel">
+        <div class="alert alert-danger" role="alert" *ngIf="Date.invalid && (Date.dirty || Date.touched)"  >
+            Expiration date is required
+           </div>
+      </div>
+      
+
+
+
+      <div class="form-group" [hidden]="f.invalid">
+        <label for="code">Code</label>
+        <input type="text" class="form-control" name="code" placeholder="Enter your Code" >
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Submit</button>
+  </form>

@@ -1,35 +1,32 @@
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <div class="d-flex" style="margin-bottom: 50px;">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="priceMax">
-      <button class="btn btn-outline-success" type="submit">Search</button>
+<h1>{{message}}</h1>
+<h1>{{count}}</h1>
+<button class="btn btn-info" [routerLink]="['addproduct']"> Add Product</button>
+<input type="number" name="price" [(ngModel)]="priceMax">
+<div class="container mt-5">
+    <h3 class="text-center">Our Products</h3>
+    <div class="row">
+      <div class="card" style="width: 18rem ;" *ngFor="let prod of listProdcut ,let i=index">
+            <div *ngIf="prod.price<priceMax || priceMax==null">
+                <img src="assets/images/the-ordinary-the-ordinary-lactic-acid-5-ha-30ml-visage.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ prod.title }}</h5>
+                    <p class="card-text">Likes: {{ prod.like }}</p>
+                    <p class="card-text">Quantity: {{ prod.quantity }}</p>
+                    <p class="card-text">Price: {{ prod.price }}</p>
+                    <button class="btn btn-primary" (click)="Like(i)">
+                        <i class="fa fa-thumbs-up"></i>
+                        Like
+                    </button>
+                    <button class="btn btn-primary" (click)="buy(i)" [disabled]="prod.quantity==0">
+                        <i class="fa fa-shopping-cart"></i>
+                        Buy
+                    </button>
+                    <button class="btn btn-info" (click)="buy(i)" [routerLink]="['/product',prod.id]">
+                        <i class="fa fa-shopping-cart"></i>
+                        Detail
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
- 
-    <div class="card" style="width: 18rem;" *ngFor="let p of listProdcut ,let i=index">
-      <div *ngIf="priceMax<p.price || priceMax==null">
-      <img src="../../assets/images/5f0b7189031725.5de839cf50769.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{p.title}}</h5>
-        <p class="card-text"> quantity : {{p.quantity}}</p>
-        <p class="card-text"> price : {{p.price}}</p>
-        <p class="card-text"> likes : {{p.like}}</p>
-        <button href="#" class="btn btn-primary" (click)="buy(i)" [disabled]="p.quantity==0" style="margin-right: 5px;">buy</button> 
-        <button href="#" class="btn btn-primary" (click)="like(i)">like</button>
-      </div>
-      </div>
-    </div>
-
-
-
-
-    <!--
-    
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="priceMax">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-  </div>
-</nav>-->
+</div>

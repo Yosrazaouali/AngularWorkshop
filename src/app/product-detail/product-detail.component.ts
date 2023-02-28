@@ -12,7 +12,7 @@ export class ProductDetailComponent implements OnInit {
 
   id!:number;
   list!:Products[];
-  constructor(private route:ActivatedRoute,private service:ProductServiceService,private routes:Router) { }
+  constructor(private route:ActivatedRoute,private service:ProductServiceService,private routes:Router ) { }
 
   ngOnInit(): void {
     this.id= this.route.snapshot.params['id'];

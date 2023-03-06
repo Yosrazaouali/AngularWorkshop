@@ -8,6 +8,9 @@ import { Products } from '../core/model/Product';
 export class ConsumerProductService {
   constructor(private http: HttpClient)  { }
   getProduct(){
-    return this.http.get<Products[]>('http://localhost:3000/products')
+    return this.http.get<Products[]>('http://localhost:3000/products') }
+    addProduct(product:Products){
+      return this.http.post('http://localhost:3000/products', Products)
+   
   }
 }

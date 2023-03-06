@@ -40,6 +40,6 @@ export class ProductsComponentComponent implements OnInit {
       this.listProdcut[i].like += 1;
       this.message = "BOUGHT";
   }
-   //function  getNumberOf  
+   //function getNumberOf  
 
 }

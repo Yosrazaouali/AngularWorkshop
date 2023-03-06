@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { TemplateDrivenFormYosraComponent } from './template-driven-form-yosra/template-driven-form-yosra.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import{ HttpClientModule } from '@angular/common/http';
 
  
 @NgModule({
@@ -32,7 +33,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -26,7 +26,7 @@ export class ProductsComponentComponent implements OnInit {
     //this.count=this.service.getNumberOf(this.listProdcut,'quantity',10);
     this.consumerProduct.getProduct().subscribe({
     
-      next: (data)=>this.listProdcut=data
+      next: (data)=>this.listProdcut=data,
     })
    
   }

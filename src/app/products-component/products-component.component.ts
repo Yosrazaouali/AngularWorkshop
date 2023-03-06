@@ -21,9 +21,9 @@ export class ProductsComponentComponent implements OnInit {
   constructor(private service: ProductServiceService , private consumerProduct: ConsumerProductService) { }
 
   ngOnInit(): void {
-    //this.title="yello :)";
-    //this.listProdcut=this.service.listProdcut;
-    //this.count=this.service.getNumberOf(this.listProdcut,'quantity',10);
+    // this.title="yello :)";
+    // this.listProdcut=this.service.listProdcut;
+    // this.count=this.service.getNumberOf(this.listProdcut,'quantity',10);
     this.consumerProduct.getProduct().subscribe({
     
       next: (data)=>this.listProdcut=data,

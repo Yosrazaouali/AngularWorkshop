@@ -10,7 +10,7 @@ export class ConsumerProductService {
   getProduct(){
     return this.http.get<Products[]>('http://localhost:3000/products') }
     addProduct(product:Products){
-      return this.http.post('http://localhost:3000/products', Products)
+      return this.http.post('http://localhost:3000/products',product)
    
   }
 }

@@ -19,8 +19,8 @@ export class AddProductComponent implements OnInit {
   }
 
   addProduct(){
-   // this.service.addProduct(this.product);
-    //this.route.navigateByUrl("/products");
+  //  this.service.addProduct(this.product);
+  //   this.route.navigateByUrl("/products");
     this.consumerProduct.addProduct(this.product).subscribe({
     next: ()=>this.route.navigateByUrl("/products")})
   }
